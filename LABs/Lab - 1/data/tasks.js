@@ -163,12 +163,12 @@ let exportedMethods = {
                 $where: "this.comments._id = '" + id + "'"
             }).then((task) => {
                 if (!task) throw "comment not found";
-                console.log(task);
+                //console.log(task);
                 let result = task.comments.filter(function (obj) {
                     console.log(obj);
                     return obj._id === id;
-                });
-                console.log(result);
+                })[0];
+                //console.log(result);
                 if (!result) throw "comment not found";
 
                 result.taskId = task._id;

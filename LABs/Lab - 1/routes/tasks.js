@@ -193,4 +193,19 @@ router.post("/:id/comments", (req, res) => {
         });
 });
 
+router.delete("/:taskId/:commentId", (req, res) => {
+    let task = taskData.getTaskById(req.params.taskId).then(() => {
+        return taskData.deleteComment(req.params.taskId,req.params.commentId)
+            .then(() => {
+                res.sendStatus(200);
+            }).catch(() => {
+                res.sendStatus(500);
+            });
+
+    }).catch((err) => {
+        console.log(err);
+        res.status(404).json({ error: "Task not found" });
+    });
+});
+
 module.exports = router;
