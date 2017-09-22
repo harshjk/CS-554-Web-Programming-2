@@ -1,0 +1,32 @@
+{
+  "name": "lab3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Harsh Jagdishbhai Kevadia",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "bootstrap": "^4.0.0-beta",
+    "browser-sync": "^2.18.13",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-live-server": "0.0.31",
+    "gulp-livereload": "^3.8.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "handlebars": "^4.0.10",
+    "jquery": "^3.2.1",
+    "popper.js": "^1.12.5",
+    "tether": "^1.4.0"
+  }
+}
