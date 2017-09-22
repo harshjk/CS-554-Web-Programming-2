@@ -50,3 +50,12 @@ section.#{$main-content-class} {
 img{
     height: $image-height;
 }
+
+.btn-primary{
+    background-color: $button-color;
+} 
+
+.nav-link{
+    color: $link-color;
+}
+

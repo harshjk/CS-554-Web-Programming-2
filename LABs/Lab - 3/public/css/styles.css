@@ -160,12 +160,12 @@ sup {
   top: -.5em; }
 
 a {
-  color: #007bff;
+  color: #0072ed;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects; }
   a:hover {
-    color: #0056b3;
+    color: #004da1;
     text-decoration: underline; }
 
 a:not([href]):not([tabindex]) {
@@ -1710,7 +1710,7 @@ fieldset[disabled] a.btn {
 
 .btn-link {
   font-weight: normal;
-  color: #007bff;
+  color: #0072ed;
   border-radius: 0; }
   .btn-link, .btn-link:active, .btn-link.active, .btn-link:disabled {
     background-color: transparent; }
@@ -1720,7 +1720,7 @@ fieldset[disabled] a.btn {
   .btn-link:hover {
     border-color: transparent; }
   .btn-link:focus, .btn-link:hover {
-    color: #0056b3;
+    color: #004da1;
     text-decoration: underline;
     background-color: transparent; }
   .btn-link:disabled {
@@ -2761,11 +2761,11 @@ tbody.collapse.show {
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #007bff;
+  color: #0072ed;
   background-color: #fff;
   border: 1px solid #ddd; }
   .page-link:focus, .page-link:hover {
-    color: #0056b3;
+    color: #004da1;
     text-decoration: none;
     background-color: #e9ecef;
     border-color: #ddd; }
@@ -5588,6 +5588,12 @@ section.book p {
 
 img {
   height: 350px; }
+
+.btn-primary {
+  background-color: #0072ee; }
+
+.nav-link {
+  color: #0072ed; }
 
 /******************************************
 *  Author : Harsh Jagdishbhai Kevadia   
