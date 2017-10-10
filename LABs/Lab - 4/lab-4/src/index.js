@@ -6,5 +6,5 @@ import registerServiceWorker from './registerServiceWorker';
 
 const title = "React Pokedex";
 
-ReactDOM.render(<App title={title} author="Phil"/>, document.getElementById('root'));
+ReactDOM.render(<App title={title} author="Harsh Jagdishbhai Kevadia"/>, document.getElementById('root'));
 registerServiceWorker();
