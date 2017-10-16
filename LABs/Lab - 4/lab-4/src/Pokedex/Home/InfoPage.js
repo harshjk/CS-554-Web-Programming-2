@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axiosInstance from "../../utils/axiosInstance";
 import { Link } from "react-router-dom";
 //import CharacterList from "../CharacterList/CharacterList";
 
