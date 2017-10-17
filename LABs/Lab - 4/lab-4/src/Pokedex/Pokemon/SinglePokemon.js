@@ -6,8 +6,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import axiosInstance from "../../utils/axiosInstance";
-/* import CharacterDetail from "./CharacterDetail";
-import CharacterComicList from "./CharacterComicList"; */
 
 class SinglePokemon extends Component {
   constructor(props) {
