@@ -4,7 +4,7 @@
  *  File : SingleBerries.js
  *******************************************/
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch, Redirect } from "react-router-dom";
 import axiosInstance from "../../utils/axiosInstance";
 
 class SingleBerries extends Component {
@@ -47,7 +47,8 @@ class SingleBerries extends Component {
 
     if (this.state.loading) {
       body = <div>Loading...</div>;
-    } else if (this.state.berrie) {
+    }
+    else if (this.state.berrie) {
       const url = this.props.match.url;
       body = (
         <div>
@@ -65,7 +66,7 @@ class SingleBerries extends Component {
         </div>
       );
     } else {
-      body = <div />;
+      body = <div />
     }
 
     return <div className="single-berry-page">{body}</div>;

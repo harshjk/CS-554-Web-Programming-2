@@ -34,8 +34,8 @@ class Pokedex extends Component {
         <div className="col-sm-8 col-sm-offset-1">
           <Switch>
             <Route path="/pokemon" component={Pokemon} />
-            <Route path="/berry" component={Berries} />
-            <Route path="/machine" component={Machines} />
+            <Route path="/berries" component={Berries} />
+            <Route path="/machines" component={Machines} />
             <Route path="/" component={InfoPage} />
           </Switch>
         </div>

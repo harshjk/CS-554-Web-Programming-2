@@ -9,6 +9,7 @@ import {
 import logo from './logo.svg';
 import './App.css';
 import Pokedex from "./Pokedex";
+import Error404 from "./Error404";
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
           </div>
           <div className="App-body">
             <Switch>
+              <Route path="/404" component={Error404} />
               <Route path="/" component={Pokedex} />
             </Switch>
           </div>

@@ -65,7 +65,7 @@ class MachineList extends Component {
       const machineDisplays = this.state.machinesResultList.map(machine => {
         return (
           <li>
-            <Link to={"/" + machine.url.replace('https://pokeapi.co/api/v2/', '')}>Machine - {machine.url.replace('https://pokeapi.co/api/v2/machine/','')}</Link>
+            <Link to={"/machines/" + machine.url.replace('https://pokeapi.co/api/v2/machine/', '')}>Machine - {machine.url.replace('https://pokeapi.co/api/v2/machine/','')}</Link>
           </li>
         );
       });
@@ -87,8 +87,8 @@ class MachineList extends Component {
               {body}
             </div>
             <div className="PageNation">
-              <Link to={`/machine/page/${previousPageNumber}`}><button className="" disabled={!this.state.previous}>Previous</button></Link>
-              <Link to={`/machine/page/${nextPageNumber}`}><button className="" disabled={!this.state.next}>Next</button></Link>
+              <Link to={`/machines/page/${previousPageNumber}`}><button className="" disabled={!this.state.previous}>Previous</button></Link>
+              <Link to={`/machines/page/${nextPageNumber}`}><button className="" disabled={!this.state.next}>Next</button></Link>
             </div>
           </div>
         </div>

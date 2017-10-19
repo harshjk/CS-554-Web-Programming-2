@@ -65,7 +65,7 @@ class BerriesList extends Component {
       const berryDisplays = this.state.berriesResultList.map(berry => {
         return (
           <li>
-            <Link to={"/" + berry.url.replace('https://pokeapi.co/api/v2/', '')}>{berry.name}</Link>
+            <Link to={"/berries/" + berry.url.replace('https://pokeapi.co/api/v2/berry/', '')}>{berry.name}</Link>
           </li>
         );
       });
@@ -87,8 +87,8 @@ class BerriesList extends Component {
               {body}
             </div>
             <div className="PageNation">
-              <Link to={`/berry/page/${previousPageNumber}`}><button className="" disabled={!this.state.previous}>Previous</button></Link>
-              <Link to={`/berry/page/${nextPageNumber}`}><button className="" disabled={!this.state.next}>Next</button></Link>
+              <Link to={`/berries/page/${previousPageNumber}`}><button className="" disabled={!this.state.previous}>Previous</button></Link>
+              <Link to={`/berries/page/${nextPageNumber}`}><button className="" disabled={!this.state.next}>Next</button></Link>
             </div>
           </div>
         </div>

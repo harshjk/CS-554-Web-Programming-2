@@ -18,10 +18,10 @@ class InfoPage extends Component {
             <Link to={`/pokemon/`}>Pokemon List</Link>
         </h3>
         <h3>
-            <Link to={`/berry/`}>Barries List</Link>
+            <Link to={`/berries/`}>Barries List</Link>
         </h3>
         <h3>
-            <Link to={`/machine/`}>Machine List</Link>
+            <Link to={`/machines/`}>Machine List</Link>
         </h3>
       </div>
     );
