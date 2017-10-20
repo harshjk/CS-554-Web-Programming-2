@@ -30,35 +30,64 @@ searchResultInDB = async (id) => {
         return data.id == id;
     });
     if (result.length > 0) {
-        history.unshift(result);
-        let flatHistory = flat(history);
-        let hmSetAsyncHistory = await client.hmsetAsync("history", flatHistory);
-        let flatBioFromRedis = await client.hgetallAsync("history");
-        console.log("------------------------------------------");
-        console.dir(flatBioFromRedis);
-        console.log("------------------------------------------");
-        return(result);
+        history.unshift(result[0]);
+        let putData = await client.setAsync(result[0].id.toString(), JSON.stringify(result[0]));
+        //console.log(result[0].id.toString());
+        //let hello = await client.getAsync(result[0].id);
+        //console.log("------------------------------------------");
+        //console.log(`Data: ${hello}`);
+        //console.log("------------------------------------------");
+        return (result[0]);
     }
     else {
-        return({ error: "No data found with given id" });
+        return ({ error: "No data found with given id" });
     }
 };
 
-getById = (async (id) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
+getResultFromCache = (id) => {
+    return new Promise(async (resolve, reject) => {
+        let result = await client.getAsync(id.toString());
+        history.unshift(JSON.parse(result));
+        resolve(result);
+    });
+}
+
+isDataInCache = (id) => {
+    return new Promise(async (resolve, reject) => {
+        let doesIdExist = await client.existsAsync(id.toString());
+        resolve(doesIdExist === 1);
+    });
+};
+
+getById = async (id) => {
+    return new Promise(async (resolve, reject) => {
+        setTimeout(async () => {
             if (isNaN(id)) {
+                //console.log("No");
                 resolve({ error: "Id should be in number format" });
             }
-            resolve(searchResultInDB(id));
+            let isExistInCache = await isDataInCache(id);
+            if (isExistInCache) {
+                let data = await getResultFromCache(id);
+                console.log("From Cache");
+                resolve(JSON.parse(data));
+            }
+            else {
+                console.log("From Data Module");
+                resolve(searchResultInDB(id));
+            }
         }, 5000);
     });
+};
+app.get("/api/people/history", async (req, res) => {
+    res.json(history.slice(0,20));
 });
 
 app.get("/api/people/:id", async (req, res) => {
     let result = await getById(req.params.id);
     res.json(result);
 });
+
 
 app.listen(3000, () => {
     console.log("We've now got a server!");
