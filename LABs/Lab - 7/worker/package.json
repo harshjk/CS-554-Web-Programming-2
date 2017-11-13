@@ -1,0 +1,16 @@
+{
+  "name": "lab8-worker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node worker.js"
+  },
+  "author": "Harsh Jagdishbhai Kevadia",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "node-redis-pubsub": "^1.0.3"
+  }
+}
